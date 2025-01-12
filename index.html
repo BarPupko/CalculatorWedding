@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>מחשבון מתנה לחתונה</title>
+        
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #545252;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #c21515;
+            color: white;
+            padding: 1em;
+            width: 100%;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 350px;
+            margin: 2em auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        label {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1em 0 0.5em;
+        }
+
+        select, input[type="button"], input[type="number"] {
+            width: 60%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        input[type="button"] {
+            width: 50%;
+            padding: 0.5em;
+            margin: 1em auto 0;
+            display: block;
+            border: none;
+            border-radius: 20px;
+            background-color: #8b0000;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #a30000;
+        }
+        #result {
+            margin-top: 1em;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: green;
+            background-color: white;
+            padding: 0.5em;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 2em;
+            text-align: center;
+            color: white;
+            font-size: 0.8em;
+        }
+        footer a {
+            color: #a8d1ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        a{
+            color: #ffffff;
+            text-decoration: none;
+        }
+       
+        .abold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>מחשבון מתנה לחתונה</h1>
+        <a text="bold">מוזמנים לחתונה לחתונה ולא יודעים מה לרשום בצ'ק?</a>
+        <br>
+        <a class="abold">בישביל זה אנחנו כאן!</a>
+        
+    </header>
+    <div class="container">
+        <label for="relationship">מערכת יחסים</label>
+        <select id="relationship">
+             <option value="friend">חבר</option>
+            <option value="co-worker">חבר לעבודה</option>
+            <option value="family">משפחה</option>
+            <option value="close-friend">חבר קרוב</option>
+        </select>
+
+        <label for="area">מיקום החתונה:</label>
+        <select id="area">
+            <option value="north">צפון</option>
+            <option value="center">מרכז</option>
+            <option value="south">דרום</option>
+        </select>
+
+        <label for="work-status">סטטוס עבודה:</label>
+        <select id="work-status">
+            <option value="employed">שכיר/ה</option>
+            <option value="self-employed">עצמאי/ת</option>
+            <option value="unemployed">לא עובד כרגע</option>
+        </select>
+
+        <label for="student">האם אתה סטודנט?</label>
+        <select id="student">
+            <option value="no">לא</option>
+            <option value="yes">כן</option>
+        </select>
+
+        <label for="place">איפה חוגגים</label>
+        <select id="place">
+            <option value="hall">אולם אירועים</option>
+            <option value="restaurant">מסעדה</option>
+        </select>
+
+        <label for="salary">משכורת חודשית ממוצעת?</label>
+        <input type="number" id="salary" placeholder="מה השכר שלך?" min="0">
+
+        <input type="button" value="חשב" onclick="calculateGift()">
+        <br>
+        <div id="result">______</div>
+    </div>
+
+    <footer>
+        <p>Developed by <a href="https://github.com/BarPupko" target="_blank">Bar Pupko</a></p>
+    </footer>
+
+    <script>
+        function calculateGift() {
+            const relationship = document.getElementById("relationship").value;
+            const area = document.getElementById("area").value;
+            const workStatus = document.getElementById("work-status").value;
+            const student = document.getElementById("student").value;
+            const salary = parseFloat(document.getElementById("salary").value) || 0;
+
+            let baseAmount = 250; // base amount
+
+            // Adjust base amount based on relationship
+            if (relationship === "family") baseAmount += 300;
+            else if (relationship === "close-friend") baseAmount += 200;
+
+            // Adjust based on area
+            if (area === "center") baseAmount += 100;
+            else if (area === "south") baseAmount -= 50;
+
+            // Adjust based on work status
+            if (workStatus === "unemployed") baseAmount -= 50;
+            else if (workStatus === "self-employed") baseAmount += 200;
+
+            // Adjust for students
+            if (student === "yes") baseAmount -= 50;
+
+            if( place === "restaurant") baseAmount -= 50;
+            // Adjust based on salary
+            if (salary > 0 && salary <= 5000) {
+                baseAmount += 50;
+            } else if (salary > 5000 && salary <= 10000) {
+                baseAmount += 100;
+            } else if (salary > 10000) {
+                baseAmount += 150;
+            }
+
+            const result = baseAmount > 0 ? baseAmount : 50; // Minimum gift amount is 50 NIS
+            document.getElementById("result").innerText = ` ${result} ₪ `;
+
+            // Secretly store submission
+            const data = {
+                relationship,
+                area,
+                workStatus,
+                student,
+                salary,
+                result: `${result} ₪`
+            };
+
+            fetch("/store_data", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            }).catch(console.error);
+        }
+    </script>
+</body>
+</html>
