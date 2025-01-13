@@ -19,46 +19,46 @@
         
     </header>
     <div class="container">
-        <label for="relationship">מערכת יחסים</label>
+        <label for="relationship">מערכת יחסים
         <select id="relationship">
              <option value="friend">חבר/ה</option>
             <option value="co-worker">חבר/ה לעבודה</option>
             <option value="family">משפחה</option>
             <option value="close-friend">חבר/ה קרוב</option>
         </select>
-
-        <label for="area">מיקום החתונה:</label>
+        </label>
+        <label for="area">מיקום החתונה:
         <select id="area">
             <option value="north">צפון</option>
             <option value="center">מרכז</option>
             <option value="south">דרום</option>
         </select>
-
-        <label for="work-status">סטטוס עבודה:</label>
+        </label>
+        <label for="work-status">סטטוס עבודה:
         <select id="work-status">
             <option value="employed">שכיר/ה</option>
             <option value="self-employed">עצמאי/ת</option>
             <option value="unemployed">לא עובד כרגע</option>
         </select>
-
-        <label for="student">האם את/ה סטודנט/ית?</label>
+        </label>
+        <label for="student">האם את/ה סטודנט/ית?
         <select id="student">
             <option value="no">לא</option>
             <option value="yes">כן</option>
         </select>
-
-        <label for="place">איפה חוגגים</label>
+    </label>
+        <label for="place">איפה חוגגים
         <select id="place">
             <option value="hall">אולם אירועים</option>
             <option value="restaurant">מסעדה</option>
         </select>
-
-        <label for="salary">משכורת חודשית ממוצעת?</label>
+        </label>
+        <label for="salary">משכורת חודשית ממוצעת?
         <input type="text" id="salary" name="salary" placeholder="מה השכר שלך?" pattern="^\d+(\.\d{1,2})?$" title="הכנס שכר בצורה מספרית" required>
-
-        <input type="button" value="חשב" onclick="calculateGift()">
+        </label>
+        <input type="button" id="calculate" value="חשב" onclick="calculateGift()">
         <br>
-        <div id="result">______</div>
+        <div id="result" placeholder="1">______₪</div>
     </div>
 
     <footer>
