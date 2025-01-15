@@ -10,6 +10,8 @@ function calculateGift() {
     // Adjust base amount based on relationship
     if (relationship === "family") baseAmount += 300;
     else if (relationship === "close-friend") baseAmount += 200;
+    else if (relationship === "manager") baseAmount += 200;
+    else if (relationship === "manager-assist") baseAmount += 200;
 
     // Adjust based on area
     if (area === "center") baseAmount += 100;
