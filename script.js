@@ -14,7 +14,7 @@ function calculateGift() {
     else if (relationship === "manager-assist") baseAmount += 200;
 
     // Adjust based on area
-    if (area === "center") baseAmount += 100;
+    if (area === "center") baseAmount += 200;
     else if (area === "south") baseAmount -= 50;
 
     // Adjust based on work status
