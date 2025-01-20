@@ -7,7 +7,7 @@ body {
     align-items: center;
     background-color: #545252;
     direction: rtl;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 header {
     background-color: #c21515;
@@ -60,7 +60,7 @@ label select, label input[type="text"] {
     padding: 10px;
     border: none;
     border-radius: 20px;
-    background-color: #c2bebe;
+    background-color: #946b6b;
     color: white;
     font-size: 1em;
     cursor: pointer;
@@ -112,6 +112,11 @@ input[type="button"]:hover {
     margin: 0 auto;
     text-align: center;
     text-decoration: underline;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 footer {
@@ -137,4 +142,19 @@ a{
 
 .abold {
     font-weight: bold;
+}
+
+
+#logo-sound{
+    cursor: pointer;
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    #logo-sound img{
+        width: 50%;
+        height: auto;
+    }
 }
