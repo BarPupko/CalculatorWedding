@@ -1,6 +1,8 @@
 # 🎁 מחשבון מתנה לחתונה 💒  
-![לעצור הכל!](![Stop Everything!](https://github.com/BarPupko/CalculatorWedding/main/stop-everything-charming.gif)
-)  
+
+<div align="center">
+  <img src="https://github.com/BarPupko/CalculatorWedding/blob/main/stop-everything-charming.gif?raw=true" alt="לעצור הכל!" />
+</div>
 
 **לעצור הכל!** יש חתונה בקרוב ואין לך מושג כמה לשים במעטפה?  
 אל דאגה, מחשבון מתנה לחתונה כאן בשבילך! 🤑  
@@ -16,4 +18,3 @@
 3. מקבלים סכום שמראה כמה אתה באמת אוהב אותם.  
 
 ---
-
