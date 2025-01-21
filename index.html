@@ -4,8 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
-
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <title>מחשבון מתנה לחתונה</title>
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+         
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
     
@@ -19,6 +21,7 @@
     </header>
     <br>
     <a class="abold" href="https://youtu.be/YvxVA7sxdks?si=dqNiS2bV_H8qZUHr&t=577">קישור לפרק קופה ראשית</a>
+
     
     <div class="container">
         <label for="relationship">מערכת יחסים
@@ -65,6 +68,15 @@
         <br>
         <div id="result" placeholder="1">______₪</div>
     </div>
+
+
+    <section id="logo-sound">
+        <img src="logo.svg" width="120" alt="CalculatorWedding logo" onclick="document.getElementById('logo-sound-audio').play(); setTimeout(() => document.getElementById('logo-sound-audio').pause(), 14800);">
+        <audio id="logo-sound-audio">
+            <source src="gingle.mp3" type="audio/mp3">
+        </audio>
+
+    </section>
 
     <footer>
         <p>Developed by <a href="https://github.com/BarPupko" target="_blank">Bar Pupko</a></p>
